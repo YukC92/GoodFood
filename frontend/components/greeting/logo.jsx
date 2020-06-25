@@ -1,11 +1,11 @@
-const Logo = () => {
-    const logo = (
-        <div id="logo">
-            Eatit🍽
-        </div>
-    )
+// const Logo = () => {
+//     const logo = (
+//         <div id="logo">
+//             Eatit🍽
+//         </div>
+//     )
 
-    return logo;
-};
+//     return logo;
+// };
 
-export default Logo
+// export default Logo

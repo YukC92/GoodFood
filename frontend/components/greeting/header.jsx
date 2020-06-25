@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="homepage">
       <NavBarContainer/>
-      <Logo/>
+      {/* <Logo/> */}
     </div>
   )
 };
