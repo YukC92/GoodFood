@@ -42,10 +42,12 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push("/"));
+    const params = new URLSearchParams(this.props.location.search)
+    this.props.action(this.state).then(() => this.props.history.push(params.get("redirecto")));
   }
 
   demoLogin() {
+    const params = new URLSearchParams(this.props.location.search)
       const username = this.demoUsername;
       const email = this.demoEmail;
       const password = this.demoPassword;
@@ -65,7 +67,7 @@ class SessionForm extends React.Component {
         }, (email.length * Speed) + j * Speed);
       }
       setTimeout(() => {
-        this.props.action(this.state).then(() => this.props.history.push("/"));
+        this.props.action(this.state).then(() => this.props.history.push(params.get("redirecto")));
       }, (email.length * Speed) + (password.length * Speed) + Speed);
   }
 

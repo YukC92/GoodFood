@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const NavBar = ({ currentUser, logout }) => {
   const personalGreeting = (currentUser) ? (
     <div className="header-group">
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
+      <p className="header-name">Hi, {currentUser.username}!</p>
       <button className="header-button" onClick={logout}>Log Out</button>
     </div>
   ) : (
@@ -20,10 +20,10 @@ const NavBar = ({ currentUser, logout }) => {
       <div className="navbar-container">
         <div className="left-nav">
             <div className="write-reviews">
-            <Link to='/businesses'>Write a review</Link>
+            <Link to='/businesses'>Write a review</Link>&nbsp;&nbsp;
             </div>
-            <a className="link" href="https://github.com/YukC92">Github</a>
-            <a className="link" href="https://www.linkedin.com/in/yuk-c-54830a192/">Linkedin</a>
+            <a href="https://github.com/YukC92">Github</a>&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/yuk-c-54830a192/">Linkedin</a>
         </div>
         <div className="right-nav">
             {personalGreeting}

@@ -1,0 +1,164 @@
+.nav-show {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: rgb(211, 35, 35);
+    display: flex; 
+    padding: 4px; 
+}
+
+.nav-show-inner {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+}
+
+.nav-show-left { 
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    text-shadow: 1px 1px 2px white;;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    background: #fff;
+    width: 900px;
+
+    border-top: 0;
+}
+
+.nav-show-mid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.nav-show-right {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.under-nav-container {
+    height: 40px;
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.under-nav-content {
+    width: 960px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    justify-content: space-between;
+}  
+
+.content-right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 200px;
+}
+
+.under-nav-left {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.under-nav-review {
+    display: flex;
+    align-items: center;
+    width: 140px;
+    justify-content: space-evenly;
+    border-left: 1px solid lightgray;
+}
+
+.under-nav-left li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 40px;
+    width: 120px;
+    border: 1px solid lightgray;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+span {
+    font-weight: bold;
+}
+
+.business-main-info {
+    font-size: x-large;
+
+}
+
+.business-footer {
+    bottom: 0;
+    background-color: lightgrey;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    border-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.business-footer-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fake-information-container{
+    display: flex;
+    flex-direction: column;
+    margin-left:auto; 
+    margin-right:0;
+  }
+  
+  .working-hours h1{
+    color: #d32323;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  
+  
+  .working-hours div span{
+    font-weight: bold;
+  }
+
+  .ameritites h1{
+    color: #d32323;
+    margin: 12px 0px;
+    font-weight: bold;
+    font-size: 16px;
+  
+  }
+  .ameritites div{
+    margin-bottom: 10px;
+  }
+  
+  .ameritites div span{
+    font-weight: bold;
+  }

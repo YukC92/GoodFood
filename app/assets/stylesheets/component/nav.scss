@@ -1,9 +1,9 @@
 .navbar-container{
-    justify-content: center;
-    padding: 20px 0px; 
+    justify-content: space-between;
+    padding: 10px 20px 0px 0px; 
     font-size: 14px;
     font-weight: 700;
-    color: black;
+    color: white;
   }
 
 .left-nav{ 
@@ -14,10 +14,10 @@
     align-items: center;
 }
 
-.right-nav{
+.right-nav {
     float: right;
     display: flex;
-    flex-direction: row;
+    color: inherit;
     justify-content: space-between;
     align-items: center;
   }

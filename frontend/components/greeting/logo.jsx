@@ -1,11 +1,13 @@
-// const Logo = () => {
-//     const logo = (
-//         <div id="logo">
-//             Eatit🍽
-//         </div>
-//     )
+import React from 'react'
 
-//     return logo;
-// };
+const Logo = () => {
+    const logo = (
+        <div id="logo">
+            Eatit🍽
+        </div>
+    )
 
-// export default Logo
+    return logo;
+};
+
+export default Logo
