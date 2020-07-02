@@ -17,15 +17,15 @@ const BusinessIndexItem = props => {
       return dollarSign.join('')
   }
 
-  const finalRating = () => {
-      let sum = 0;
+  // const finalRating = () => {
+  //     let sum = 0;
 
-      reviews.forEach(review => {
-          sum += review.rating;
-      });
+  //     reviews.forEach(review => {
+  //         sum += review.rating;
+  //     });
 
-      return Math.floor(sum / reviews.length);
-  };
+  //     return Math.floor(sum / reviews.length);
+  // };
 
  const getStars = (num) => {
   let stars = [];
@@ -36,7 +36,7 @@ const BusinessIndexItem = props => {
   return (stars);
 }
 
-
+  console.log(props.business)
  const content = (
       <div className="business-index-container">
         <div className="business-index">
@@ -50,18 +50,18 @@ const BusinessIndexItem = props => {
                   className="business-name"
                   to={`/businesses/${props.business.id}`}
                 >
-                  {props.business.businessName}
+                  {props.business.business_name}
                 </Link>
                 <div>
-                  {finalRating()}
-                  <span className="review-text">
-                    {Object.keys(props.business.reviews).length}
-                  </span>
+                  4
+                  {/* <span className="review-text">
+                    {Object.keys(props.reviews).length} */}
+                  {/* </span> */}
                 </div>
-                <div>{costSign()}</div>
+                <div>$$</div>
               </div>
               <div className="index-location">
-                <div>{phoneNumber()}</div>
+                {/* <div>{phoneNumber()}</div> */}
                 <div>{props.business.address}</div>
                 <div> {props.business.city}</div>
               </div>

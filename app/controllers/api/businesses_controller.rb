@@ -16,7 +16,7 @@ class Api::BusinessesController < ApplicationController
       end
     
       def show
-        @business = Business.find(params[:id])
+        @business = Business.with_attached_photos.find(params[:id])
         if @business
           render "api/businesses/show"
         else
@@ -28,6 +28,6 @@ class Api::BusinessesController < ApplicationController
       private
     
       def business_params
-        params.require(:business).permit(:business_name, :address, :city, :state, :zip_code, :latitude, :rating, :website, :longitude, :user_id)
+        params.require(:business).permit(:business_name, :address, :city, :state, :zip_code, :latitude, :rating, :website, :longitude, :user_id, photos: [])
       end
 end

@@ -133,32 +133,73 @@ span {
     flex-direction: column;
     margin-left:auto; 
     margin-right:0;
-  }
+}
   
-  .working-hours h1{
-    color: #d32323;
-    margin-bottom: 12px;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  
-  
-  .working-hours div span{
-    font-weight: bold;
-  }
+.working-hours h1{
+color: #d32323;
+margin-bottom: 12px;
+font-weight: bold;
+font-size: 16px;
+}
 
-  .ameritites h1{
-    color: #d32323;
-    margin: 12px 0px;
-    font-weight: bold;
-    font-size: 16px;
-  
-  }
-  .ameritites div{
-    margin-bottom: 10px;
-  }
-  
-  .ameritites div span{
-    font-weight: bold;
-  }
+
+
+.working-hours div span{
+font-weight: bold;
+}
+
+.ameritites h1{
+color: #d32323;
+margin: 12px 0px;
+font-weight: bold;
+font-size: 16px;
+}
+
+.ameritites div{
+margin-bottom: 10px;
+}
+
+.ameritites div span{
+font-weight: bold;
+}
+
+.business-map {
+    border: 1px solid black
+}
+#show-map-container {
+    height: 200px;
+    width: 200px;
+}
+
+.business-index-container {
+    border: 1px solid lightgrey;
+    display: flex;
+    margin: 10px;
+}
+
+#index-map-container {
+   height: 500px;
+   width: 300px; 
+}
+
+.business-index-section-entire-master {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.business-index-left ul {
+    margin: 50px 10px;
+}
+
+.index-location {
+    float: right;
+}
+
+.business-photo {
+    display: inline-block;
+    width: 25%;
+    height: 25%;
+    object-fit: cover;
+    object-position: center;
+}

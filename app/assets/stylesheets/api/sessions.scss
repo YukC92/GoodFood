@@ -161,8 +161,7 @@
 }
   
 .switch-link {
-    text-decoration: none;
-    
+    text-decoration: none; 
 }
  
 .link {
@@ -186,14 +185,13 @@
     background-color: pink;
 }
   
-.show-errors {
+#text-error {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-}
-  
-#text-error {
-    display: flex;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
 }
   
   

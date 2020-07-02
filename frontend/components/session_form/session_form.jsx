@@ -20,13 +20,6 @@ class SessionForm extends React.Component {
       return (
         <div id="error-container">
           <div id="text-error">{this.props.errors[0]}</div>
-          <div>
-            <button
-              onClick={this.props.clearErrors}
-              className="error-button"
-            >
-            </button>
-          </div>
         </div>
       );
     }

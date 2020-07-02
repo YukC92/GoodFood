@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarShowContainer from '../nav_bar/navbar_show_container';
 import Information from './information'
@@ -14,6 +14,15 @@ class BusinessShow extends React.Component {
         this.props.fetchBusiness(this.props.match.params.businessId)
     }
 
+    contentPhotos(){
+        return (
+            <div>
+                {this.props.business.photoUrls.slice(0,4).map((photourl, idx)=> <img key={idx} className="business-photo" src={photourl}/>)}
+            </div>
+        )
+    }
+
+
     render() {
         if (!this.props.business) {
             return null
@@ -24,10 +33,9 @@ class BusinessShow extends React.Component {
                 <NavBarShowContainer/>
             </div>
             <div className="business-main">
-                photo part
             </div>
             <div className="business-pic">
-                picture: will do 
+                {this.contentPhotos()}
             </div>
             <div className="main-content">
             <section className="content-left">

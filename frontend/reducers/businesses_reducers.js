@@ -8,7 +8,7 @@ import {
     Object.freeze(state);
     switch(action.type) {
       case RECEIVE_ALL_BUSINESSES:
-        return Object.assign({}, action.business)
+        return Object.assign({}, action.businesses)
       case RECEIVE_BUSINESS:
         return Object.assign({}, { [action.business.id]: action.business })
       case SEARCH_BUSINESS:

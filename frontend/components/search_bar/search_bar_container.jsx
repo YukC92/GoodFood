@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return({
-    searchBusinesses: (restaurantId) => dispatch(searchBusinesses(restaurantId))
+    searchBusinesses: (businessId) => dispatch(searchBusinesses(businessId))
   })
 }
 

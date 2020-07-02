@@ -19,10 +19,11 @@ const searchBusiness = (business) => ({
     business
   })
 
-export const fetchBusinesses = () => dispatch => (
+export const fetchBusinesses = () => dispatch => {
+  return (
   BusinessApiUtil.fetchBusinesses()
   .then(businesses => dispatch(receiveBusinesses(businesses)))
-);
+)};
 
 export const fetchBusiness = (id) => dispatch => (
   BusinessApiUtil.fetchBusiness(id)

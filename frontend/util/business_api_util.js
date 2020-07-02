@@ -1,7 +1,7 @@
 export const fetchBusinesses = () => (
   $.ajax({
     method: "GET",
-    url: `/api/businesses`
+    url: `/api/business`
   })
 );
 
@@ -15,7 +15,7 @@ export const fetchBusiness = (id) => (
 export const createBusiness = (business) => (
   $.ajax({
     method: "POST",
-    url: `/api/businesses`,
+    url: `/api/business`,
     data: {business}
   })
 );

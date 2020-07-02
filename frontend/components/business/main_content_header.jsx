@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BusinessShowMap from "./business_show_map";
 
 
 const MainContentHeader = props => {
@@ -42,12 +43,13 @@ const MainContentHeader = props => {
             </div>
             <div className="business-map-and-pic">
                 <div className="business-map">
-                    map part:will do
+                    <BusinessShowMap business={business}/>
                     <div className="business-basic-info">
                         <div>{business.address}</div>
                         <div>{business.city}, {business.state} {business.zipcode}</div>
                         {/* <div>{phoneNumber()}</div> */}
-                        <div>{business.website}</div>
+
+                        <a href={business.website}>{business.website}</a>
                     </div>
                 </div>
             </div>

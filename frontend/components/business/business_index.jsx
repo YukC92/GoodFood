@@ -1,47 +1,41 @@
-import React, {useEffect, useState} from 'react'
-import BusinessIndexItem from "./business_index_item";
-import BusinessMap from "./business_map"
-import NavBarShowContainer from '../NavBar/navbar_show_container';
-
-const BusinessIndex = props => {
-  const fetchBusinesses = props.fetchBusinesses
   
-  useEffect(() => {
-    if (!props.businesses) {
-    fetchBusinesses()
-    }
-  }, [])
+import React from "react";
+import BusinessIndexItem from './business_index_item';
+import NavbarShow from "../nav_bar/navbar_show_container";
+import BusinessIndexMap from "./business_index_map";
+import Footer from "../greeting/footer";
 
- if (!props.businesses[0]) {
-    return null;
+class BusinessIndex extends React.Component{
+  
+  componentDidMount(){
+    this.props.fetchBusinesses();
   }
 
- const content = (
-    <div>
-      <NavBarShowContainer type="non-home" />
-      <div className="filter-container">
-        <div className="filter">
-          <div className="filter-right">Best Places in San Francisco</div>
-          <span></span>
-          <div className="filter-left">Showing 1-9 of 9</div>
-        </div>
-      </div>
-      <div className="index-main">
-        <div>
-          <ul>
-            {props.businesses.map(business => (
-              <BusinessIndexItem business={business} key={business.id} />
-            ))}
-          </ul>
-        </div>
-        <div className="map-container">
-                
-        </div>
-      </div>
-    </div>
-  );
+  render(){
+    let { businesses } = this.props;
+    let allBusinesses = businesses.map(business => {
+      return(
+        <BusinessIndexItem key={business.id} business={business}/>
+      );
+    });
 
-  return content;
+    return (
+    <div>
+        <NavbarShow />
+        <div className="business-index-section-entire-master">
+          <div className="business-index-left">
+            <ul>{allBusinesses}</ul>
+          </div>
+          <div className="business-index-sidebar-right">
+            <div className="fake-map">
+              <BusinessIndexMap businesses={businesses} />
+            </div>
+          </div>
+          </div>
+        <Footer />
+      </div>
+    )
+  }
 }
 
 export default BusinessIndex;
