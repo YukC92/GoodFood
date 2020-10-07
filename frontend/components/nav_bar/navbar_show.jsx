@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-
 const NavBarShow = props => {
+
+
+    
     const {currentUser, logout} = props
 
     const personalGreeting = (currentUser) ? (
@@ -42,7 +44,7 @@ const NavBarShow = props => {
                     <li>More</li>
                 </div>
                 <div className="under-nav-review">
-                    <Link to='/'>Write a review</Link>
+                    <Link to={`/businesses`}>All Businesses</Link>
                 </div>
             </div>
             

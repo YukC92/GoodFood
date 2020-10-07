@@ -1,62 +1,77 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import BusinessShowMap from "./business_show_map";
 
-
-const MainContentHeader = props => {
-
-    const { business, reviews } = props
-
-    // const phoneNumber = () => {
-    //     if (props.business.phone_number.split('').length < 10) {
-    //       return "N/A"
-    //     }
-    //     return `(${props.business.phone_number.slice(0, 3)}) ${props.business.phone_number.slice(3, 6)}-${props.business.phone_number.slice(6, 10)}`
-    // }
-
-    const costSign = () => {
-        let dollarSign = [];
-        for (let i = 0; i < reviews.priceRating; i++) {
-            dollarSign.push('$')
-        }
-        return dollarSign.join('')
+class MainContentHeader extends React.Component {
+    constructor(props) {
+      super(props);
     }
 
-    const finalRating = () => {
-        let sum = 0;
+    hasReview() {
+        if (!this.props.currentUser) {
+          return (
+            <Link to={`/login`}>
+              <input id="write-a-review" type="button" value="Write a Review" />
+            </Link>
+          );
+        }
 
-        reviews.forEach(review => {
-            sum += review.rating;
-        });
 
-        return Math.floor(sum / reviews.length);
+        for (let i = 0; i < this.props.business.reviews.length; i++) {
+          let userId = this.props.business.reviews[i].userId;
+          if (userId === this.props.currentUser) {
+            return (
+              <Link
+                to={`/businesses/${this.props.match.params.businessId}/reviews/${this.props.business.reviews[i].id}`}
+              >
+                <input
+                  id="write-a-review"
+                  type="button"
+                  value="Update Review"
+                />
+              </Link>
+            );
+          }
+        }
+        return (
+          <Link to={`/businesses/${this.props.match.params.businessId}/reviews`}>
+            <input id="write-a-review" type="button" value="Write a Review" />
+          </Link>
+        );
+    }
+
+    finalRating() {
+      let sum = 0;
+
+      this.props.business.reviews.forEach(review => {
+        sum += review.rating;
+      });
+
+      return Math.floor(sum / this.props.business.reviews.length) * 2;
     };
 
+    render() {
+        return (
+        <div className="main-header">
+            <div className="business-header-info-container">
+                <div className="business-header-info">
+                    <div>
+                        <div>{this.props.business.business_name}</div>
+                        <img
+                          className={`star-lrg-${this.finalRating()}` + ` star-lrg`}
+                          src="https://i.imgur.com/UkZkm0D.png"
+                        />
+                        <div>$$</div>
+                    </div>
 
-
-    const content = (
-        <div className="business-header-info">
-            <div className="business-main-info">
-                <div className="business-name">{business.business_name}</div>
-                <div className="business-rating">{business.rating}</div>
-                <div className="business-price-rating">$$</div>
-            </div>
-            <div className="business-map-and-pic">
-                <div className="business-map">
-                    <BusinessShowMap business={business}/>
-                    <div className="business-basic-info">
-                        <div>{business.address}</div>
-                        <div>{business.city}, {business.state} {business.zipcode}</div>
-                        {/* <div>{phoneNumber()}</div> */}
-
-                        <a href={business.website}>{business.website}</a>
+                    <div className="under-header-right">
+                        {/* <div>{this.createReview()}</div> */}
+                        <div>{this.hasReview()}</div>
                     </div>
                 </div>
             </div>
         </div>
-    )
-
-    return content;
+        )
+    }
 }
 
-export default MainContentHeader
+export default MainContentHeader;

@@ -2,66 +2,54 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom'
 
 const BusinessIndexItem = props => {
-  const phoneNumber = () => {
-    if (props.business.phone_number.split('').length < 6) {
-      return "N/A"
+
+  const pickPrice = () => {
+    let price = [];
+    let num = Math.floor(Math.random() * 4) + 1
+    for (let i = 0; i < num; i++) {
+      price.push("$")
     }
-    return `(${props.business.phone_number.slice(0, 3)}) ${props.business.phone_number.slice(3, 6)}-${props.business.phone_number.slice(6, 10)}`
+    return price.join('')
   }
 
-  const costSign = () => {
-      let dollarSign = [];
-      for (let i = 0; i < reviews.priceRating; i++) {
-          dollarSign.push('$')
-      }
-      return dollarSign.join('')
-  }
+  const starRating = () => {
+      let sum = 0;
 
-  // const finalRating = () => {
-  //     let sum = 0;
+      props.business.reviews.forEach(review => {
+          sum += review.rating;
+      });
 
-  //     reviews.forEach(review => {
-  //         sum += review.rating;
-  //     });
-
-  //     return Math.floor(sum / reviews.length);
-  // };
-
- const getStars = (num) => {
-  let stars = [];
-
-  for (let i = 0; i < num; i++) {
-    stars.push(<div key={i} className={`mystar fa fa-star checked`}></div>);
-  }
-  return (stars);
-}
-
-  console.log(props.business)
+      return Math.floor(sum / props.business.reviews.length) * 2;
+  };
+  
  const content = (
       <div className="business-index-container">
         <div className="business-index">
-          <div className="business-index-left">
-            photo part: will add
+          <div className="business-index-photo">
+            <img src={props.business.photoUrls[0]} alt=""/>
           </div>
-          <div className="index-info">
-            <div className="info-top">
-              <div className="info-top-left">
+          <div className="business-index-info">
+            <div className="business-index-info-top">
+              <div className="business-index-info-left">
                 <Link
                   className="business-name"
                   to={`/businesses/${props.business.id}`}
                 >
                   {props.business.business_name}
                 </Link>
-                <div>
-                  4
-                  {/* <span className="review-text">
-                    {Object.keys(props.reviews).length} */}
-                  {/* </span> */}
-                </div>
-                <div>$$</div>
+             <div>
+               <img
+                 className={`star-medium-${starRating()}` + " star-medium"}
+                 src="https://i.imgur.com/UkZkm0D.png"
+               />
+               <span className="review-text">
+                 {" "}
+                 {Object.keys(props.business.reviews).length} reviews
+                  </span>
+             </div>
+             <div>{pickPrice()}</div>
               </div>
-              <div className="index-location">
-                {/* <div>{phoneNumber()}</div> */}
+              <div className="business-index-info-right">
                 <div>{props.business.address}</div>
                 <div> {props.business.city}</div>
               </div>

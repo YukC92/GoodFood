@@ -70,6 +70,36 @@
     justify-content: space-between;
 }  
 
+.filter-container{
+    background-color: #f5f5f5;
+    padding: 30px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.filter{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-right{
+  font-size: 21px;
+  color: #333;
+}
+
+.business-index-left {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 30px 15px 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
+
 .content-right {
     display: flex;
     justify-content: right;
@@ -171,10 +201,85 @@ font-weight: bold;
     width: 200px;
 }
 
-.business-index-container {
-    border: 1px solid lightgrey;
-    display: flex;
-    margin: 10px;
+.business-index-container{
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 20px;
+}
+
+.business-index{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+.business-index-photo img{
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 18px;
+}
+
+.business-index-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 75px;
+}
+
+.business-index-info-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+  height: 75px;
+}
+
+.business-index-info-left{
+  display: flex;
+  flex-direction: column;
+}
+
+.business-index-info-right{
+  width: 120px;
+  padding-top: 3px;
+  padding-left: 12px;
+  text-align: right;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  font-size:14px;
+  color: #333333;
+}
+.business-index-info-right div{
+  padding-bottom: 5px;
+}
+
+.index-comment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.business-index-photo img{
+  display: flex;
+  justify-content: flex-start;
+  height: 210px;
+  width: 210px;
+  margin-right: 10px;
+}
+
+.fake-map {
+    height: 350px;
+    width: 350px;
+    position: sticky;
+    top: 0;
 }
 
 #index-map-container {
@@ -188,18 +293,6 @@ font-weight: bold;
 
 }
 
-.business-index-left ul {
-    margin: 50px 10px;
-}
-
 .index-location {
     float: right;
-}
-
-.business-photo {
-    display: inline-block;
-    width: 25%;
-    height: 25%;
-    object-fit: cover;
-    object-position: center;
 }

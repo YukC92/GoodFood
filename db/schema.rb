@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_01_202513) do
+ActiveRecord::Schema.define(version: 2020_09_04_221341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,11 +57,9 @@ ActiveRecord::Schema.define(version: 2020_07_01_202513) do
     t.integer "business_id", null: false
     t.integer "rating", null: false
     t.text "content", null: false
-    t.integer "review_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["business_id"], name: "index_reviews_on_business_id"
-    t.index ["review_id"], name: "index_reviews_on_review_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 

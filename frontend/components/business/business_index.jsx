@@ -3,7 +3,6 @@ import React from "react";
 import BusinessIndexItem from './business_index_item';
 import NavbarShow from "../nav_bar/navbar_show_container";
 import BusinessIndexMap from "./business_index_map";
-import Footer from "../greeting/footer";
 
 class BusinessIndex extends React.Component{
   
@@ -22,6 +21,11 @@ class BusinessIndex extends React.Component{
     return (
     <div>
         <NavbarShow />
+        <div className="filter-container">
+          <div className="filter">
+            <div className="filter-right">Best Places in San Francisco</div>
+          </div>
+        </div>
         <div className="business-index-section-entire-master">
           <div className="business-index-left">
             <ul>{allBusinesses}</ul>
@@ -32,7 +36,6 @@ class BusinessIndex extends React.Component{
             </div>
           </div>
           </div>
-        <Footer />
       </div>
     )
   }

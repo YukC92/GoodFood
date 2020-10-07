@@ -12,7 +12,6 @@ const Header = () => {
         <NavBarContainer/>
         <Logo/>
       </div>
-      <Footer/>
     </div>
   )
 };
