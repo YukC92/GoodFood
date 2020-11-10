@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import HomeSearch from "./home_search_bar"
-import NavBarSearch from "./navbar_search"
+import NavBarSearch from "./nav_search_bar"
 
 const SearchBar = props => {
   const {searchBusinesses, match, history, businesses} = props

@@ -1,23 +1,36 @@
 .navbar-container{
-    justify-content: space-between;
-    padding: 10px 20px 0px 0px; 
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
-  }
+  justify-content: space-between;
+  padding: 10px 20px 0px 0px; 
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
 
 .left-nav{ 
-    float: left;
-    color: inherit;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  float: left;
+  color: inherit;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.left-nav :hover{
+  background-color: gray;
 }
 
 .right-nav {
-    float: right;
-    display: flex;
-    color: inherit;
-    justify-content: space-between;
-    align-items: center;
-  }
+  float: right;
+  display: flex;
+  color: inherit;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-nav :hover {
+  background-color: gray;
+}
+
+.write-reviews :hover{
+  background-color: gray;
+}
+

@@ -8,7 +8,7 @@ import React from 'react';
 const mapStateToProps = (state, ownProps) => {
     let businessId = ownProps.match.params.businessId
     let business = state.entities.businesses[businessId];
-    debugger
+    // debugger
     return ({
         business: business,
         businessId: businessId,

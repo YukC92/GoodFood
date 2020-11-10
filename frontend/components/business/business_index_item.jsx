@@ -13,16 +13,21 @@ const BusinessIndexItem = props => {
   }
 
   const starRating = () => {
-      let sum = 0;
+    // debugger
+    if (props.business.reviews.length === 0) {
+      return 0;
+    }
+    let sum = 0;
 
-      props.business.reviews.forEach(review => {
-          sum += review.rating;
-      });
+    props.business.reviews.forEach(review => {
+        sum += review.rating;
+    });
 
-      return Math.floor(sum / props.business.reviews.length) * 2;
+    return Math.floor(sum / props.business.reviews.length) * 2;
   };
   
  const content = (
+   
       <div className="business-index-container">
         <div className="business-index">
           <div className="business-index-photo">

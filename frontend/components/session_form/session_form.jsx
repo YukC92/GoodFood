@@ -136,9 +136,9 @@ class SessionForm extends React.Component {
 
   privacyPolicy() {
     if (this.props.formType === "login") {
-      return <div>No Terms and Conditions for Logging In.</div>;
+      return <div className="terms">No Terms and Conditions for Logging In.</div>;
     } else {
-      return <div>No Terms and Conditions for Signing Up.</div>;
+      return <div className="terms">No Terms and Conditions for Signing Up.</div>;
     }
   }
 
@@ -191,7 +191,7 @@ class SessionForm extends React.Component {
 
   render() {
     if (this.props.currentUser) {
-      <Redirect to="/" />;
+      <Redirect to="/businesses" />;
     }
     return (
       <div>

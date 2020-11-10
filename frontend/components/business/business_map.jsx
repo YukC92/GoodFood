@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 import MarkerManager from "../../util/marker_manager";
 
-class BusinessIndexMap extends React.Component {
+class BusinessMap extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
 
     mapOptions() {
@@ -24,15 +25,18 @@ class BusinessIndexMap extends React.Component {
             };
         } else {
             return ({
-                center: { lat: 37.772972, lng: -122.431297 }, // this is SF
+                center: { lat: 37.8014, lng: -122.40163 }, // this is SF
                 zoom: 13
             })
         }
     };
 
-    componentDidMount() {
 
-        let mapStyle = this.mapOptions();
+    componentDidMount() {
+        // set the map to show SF
+
+        let mapStyle = this.mapOptions()
+        // wrap this.mapNode in a Google Map
 
         this.map = new google.maps.Map(this.mapNode, mapStyle);
 
@@ -40,17 +44,14 @@ class BusinessIndexMap extends React.Component {
         this.MarkerManager.updateMarkers(this.props.businesses);
     }
 
+
     componentDidUpdate() {
-        this.MarkerManager.updateMarkers(this.props.businesses)
+        this.MarkerManager.updateMarkers(this.props.businesses);
     }
 
     render() {
-        return (
-            <div id="index-map-container" ref={map => (this.mapNode = map)}>
-
-            </div>
-        )
+        return <div className="map-sticky" ref={map => (this.mapNode = map)} />;
     }
 }
 
-export default BusinessIndexMap;
+export default BusinessMap;

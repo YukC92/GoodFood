@@ -1,11 +1,9 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import SearchBarContainer from "../search_bar/search_bar_container"
 
 const NavBarShow = props => {
-
-
-    
-    const {currentUser, logout} = props
+    const {currentUser, logout, type} = props
 
     const personalGreeting = (currentUser) ? (
     <div>
@@ -27,9 +25,7 @@ const NavBarShow = props => {
                 <div className="nav-show-left">
                     <Link to='/'>Eatit🍽</Link>
                 </div>
-                <div className="nav-show-middle">
-                    Searchbar will do later.
-                </div>
+                <SearchBarContainer type={type} />
                 <div className="nav-show-right">
                     {personalGreeting}
                 </div>

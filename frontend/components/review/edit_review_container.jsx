@@ -38,16 +38,15 @@ const mapStateToProps = (state, ownProps) => {
             }
         }
     }
-
-    return {
-        businessId,
-        business,
+    return ({
+        businessId: businessId,
+        business: business,
         businesses: state.entities.businesses,
-        currentUser: state.entities.users[state.session.currentUser].id,
+        currentUser: state.entities.users[state.session.id],
         review: review,
         businessReviews: selectReviewsForBusiness(state, businessId),
         formType: 'Update Review'
-    }
+    })
 };
 
 const mapDispatchToProps = dispatch => ({

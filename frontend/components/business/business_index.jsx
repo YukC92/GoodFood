@@ -11,6 +11,7 @@ class BusinessIndex extends React.Component{
   }
 
   render(){
+    debugger
     let { businesses } = this.props;
     let allBusinesses = businesses.map(business => {
       return(

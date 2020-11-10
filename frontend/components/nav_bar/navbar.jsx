@@ -20,9 +20,9 @@ const NavBar = ({ currentUser, logout }) => {
       <div className="navbar-container">
         <div className="left-nav">
             <div className="write-reviews">
-            <Link to='/businesses'>All business</Link>&nbsp;&nbsp;
+          <Link to='/businesses'>All business</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
-            <a href="https://github.com/YukC92">Github</a>&nbsp;&nbsp;
+        <a href="https://github.com/YukC92">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="https://www.linkedin.com/in/yuk-c-54830a192/">Linkedin</a>
         </div>
         <div className="right-nav">

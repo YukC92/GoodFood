@@ -76,7 +76,7 @@ class BusinessShow extends React.Component {
                 <section className="content-left">
                     <div className="business-map-and-pic">
                         <div className="business-map">
-                            <BusinessShowMap business={this.props.business} />
+                            <BusinessShowMap businesses={[this.props.business]} />
                             <div className="business-basic-info">
                                 <div>{this.props.business.address}</div>
                                 <div>{this.props.business.city}, {this.props.business.state} {this.props.business.zipcode}</div>
