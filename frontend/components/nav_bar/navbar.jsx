@@ -11,24 +11,16 @@ const NavBar = ({ currentUser, logout }) => {
   ) : (
     <nav className="login-signup">
       <Link to="/login">Login</Link>
-        &nbsp;or&nbsp;
+      &nbsp;&nbsp;&nbsp;
       <Link to="/signup">Sign up!</Link>
     </nav>
   )
 
   return (
       <div className="navbar-container">
-        <div className="left-nav">
-            <div className="write-reviews">
-          <Link to='/businesses'>All business</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </div>
-        <a href="https://github.com/YukC92">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://www.linkedin.com/in/yuk-c-54830a192/">Linkedin</a>
-        </div>
         <div className="right-nav">
             {personalGreeting}
         </div>
-
       </div>
   )
 };

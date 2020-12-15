@@ -304,3 +304,12 @@ font-weight: bold;
 .index-location {
     float: right;
 }
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: text;
+    padding: 5px;
+    max-width: 630px;
+    font-size: 12px;
+}

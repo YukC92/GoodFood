@@ -42,7 +42,7 @@ const mapStateToProps = (state, ownProps) => {
         businessId: businessId,
         business: business,
         businesses: state.entities.businesses,
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.entities.users[state.session.currentUser].id,
         review: review,
         businessReviews: selectReviewsForBusiness(state, businessId),
         formType: 'Update Review'

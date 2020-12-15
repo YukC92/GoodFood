@@ -47,7 +47,7 @@ const ReviewForm = props => {
     const currentUserReview = () => {
         let foundReview = false;
         reviews.forEach(review => {
-            if (!foundReview && review.user_id === currentUser.id) {
+            if (!foundReview && review.user_id === currentUser) {
                 history.push(`/businesses/${businessId}/reviews/${review.id}`);
                 foundReview = true;
             }

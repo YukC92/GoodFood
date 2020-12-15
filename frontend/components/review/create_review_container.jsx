@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     return ({
         business: business,
         businessId: businessId,
-        currentUser: state.entities.users[state.session.id],
+        currentUser: state.session.currentUser,
         reviews: business ? business.reviews : "",
         formType: 'Create Review'
     });

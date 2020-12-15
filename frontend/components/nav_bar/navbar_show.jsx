@@ -5,15 +5,33 @@ import SearchBarContainer from "../search_bar/search_bar_container"
 const NavBarShow = props => {
     const {currentUser, logout, type} = props
 
+    const dropDown = () => {
+        var x = document.getElementById("myDropdown");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
     const personalGreeting = (currentUser) ? (
     <div>
-        <p>Hi, {currentUser.username}!</p>
-        <button onClick={logout}>Log Out</button>
+        <div onClick={dropDown}>
+            <p>Hi, {currentUser.username}!</p>
+        </div>
+        <div id="myDropdown" className="dropdown-content">
+            <input
+                className="logout-button"
+                type="submit"
+                onClick={logout}
+                value="Log Out"
+            />
+        </div>
     </div>
     ) : (
     <div>
         <Link to={`/login?redirecto=${props.location.pathname}`}>Login</Link>
-        &nbsp;or&nbsp;
+        &nbsp;&nbsp;
         <Link to="/signup">Sign up!</Link>
     </div>
     )
@@ -25,7 +43,6 @@ const NavBarShow = props => {
                 <div className="nav-show-left">
                     <Link to='/'>Eatit🍽</Link>
                 </div>
-                <SearchBarContainer type={type} />
                 <div className="nav-show-right">
                     {personalGreeting}
                 </div>
@@ -33,12 +50,12 @@ const NavBarShow = props => {
         </div>
         <div className="under-nav-container">
             <div className="under-nav-content">
-                <div className="under-nav-left">
+                {/* <div className="under-nav-left">
                     <li>Restaurant</li>
                     <li>Home Service</li>
                     <li>Auto Services</li>
                     <li>More</li>
-                </div>
+                </div> */}
                 <div className="under-nav-review">
                     <Link to={`/businesses`}>All Businesses</Link>
                 </div>

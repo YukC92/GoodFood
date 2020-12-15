@@ -1,15 +1,16 @@
 import {connect} from 'react-redux';
 import BusinessShow from './business_show';
-import { fetchBusiness} from '../../actions/business_actions';
+import { fetchBusiness } from '../../actions/business_actions';
 import { deleteReview } from '../../actions/review_actions';
 
 
 
 const mapStateToProps = (state, ownProps) => {
+  debugger
     const businessId = ownProps.match.params.businessId;
-    const currentUser = state.session.id;
+    const currentUser = state.session.currentUser
     return({
-        currentUser: state.entities.users[currentUser],
+        currentUser,
         business: state.entities.businesses[businessId],
     });
 };

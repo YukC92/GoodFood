@@ -7,12 +7,9 @@ const Review = props => {
 
   const checkUser = () => {
       if (!currentUser) return;
-      if (currentUser === review.userId) {
+      if (currentUser === review.user_id) {
         return (
-          <i
-            className="fas fa-trash-alt fa-2x"
-            onClick={() => {deleteReview(id)}}
-          />
+          <button onClick={deleteReview}>deleteReview</button>
         );
       }
       return ""

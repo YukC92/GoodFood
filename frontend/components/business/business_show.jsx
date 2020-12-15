@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import NavBarShowContainer from '../nav_bar/navbar_show_container';
 import Information from './information';
@@ -6,83 +6,64 @@ import MainContentHeader from './main_content_header';
 import BusinessShowMap from "./business_show_map";
 import Review from '../review/review';
 
+const BusinessShow = props => {
+    const { deleteReview, businessId, currentUser, fetchBusiness, business, match } = props
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        fetchBusiness(match.params.businessId);
+    }, []);
 
-class BusinessShow extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.handleDelete = this.handleDelete.bind(this)
+    if (!business) {
+        return "";
     }
 
-    componentDidMount() {
-        this.props.fetchBusiness(this.props.match.params.businessId)
-    }
-
-    contentPhotos(){
+    const contentPhotos = () => {
         return (
             <div>
-                {this.props.business.photoUrls.slice(0,4).map((photourl, idx)=> <img key={idx} className="business-photo" src={photourl}/>)}
+                {business.photoUrls.slice(0, 4).map((photourl, idx) => <img key={idx} className="business-photo" src={photourl} />)}
             </div>
         )
     }
 
-    handleDelete(id) {
-        this.props.deleteReview(id).then(() => fetchBusiness(this.props.match.params.businessId));
+    const handleDelete = (id) => {
+        deleteReview(id).then(() => fetchBusiness(match.params.businessId));
     }
-    
-    // allReviews() {
-    //     this.props.business.reviews.map(review => {
-    
-    //     return (<Review
-    //     id = {review.id}
-    //     review={review}
-    //     business = {this.props.business}
-    //     key={review.id}
-    //     currentUser= {this.props.currentUser}
-    //     deleteReview={this.handleDelete()}
-    //     />)
-    //     })
-    // }
 
-    render() {
-        debugger
-        if (!this.props.business) {
-            return null
-        }
+    const allReviews = business.reviews.map(review => {
 
-        const allReviews = this.props.business.reviews.map(review => {
+        return (<Review
+            id={review.id}
+            review={review}
+            business={business}
+            key={review.id}
+            currentUser={currentUser}
+            deleteReview={handleDelete}
+        />)
+    })
 
-            return (<Review
-                id={review.id}
-                review={review}
-                business={this.props.business}
-                key={review.id}
-                currentUser={this.props.currentUser}
-                deleteReview={this.handleDelete()}
-            />)
-        })
-        return (
+    debugger
+    const content = (
         <div>
             <div className="business-nav">
-                <NavBarShowContainer/>
+                <NavBarShowContainer />
             </div>
             <div className="business-pic">
-                {this.contentPhotos()}
+                {contentPhotos()}
             </div>
             <div className="business-main-info">
-                <MainContentHeader business={this.props.business} match={this.props.match} currentUser={this.props.currentUser} />
+                <MainContentHeader business={business} match={match} currentUser={currentUser} />
             </div>
             <div className="main-content">
                 <section className="content-left">
                     <div className="business-map-and-pic">
                         <div className="business-map">
-                            <BusinessShowMap businesses={[this.props.business]} />
+                            <BusinessShowMap businesses={[business]} />
                             <div className="business-basic-info">
-                                <div>{this.props.business.address}</div>
-                                <div>{this.props.business.city}, {this.props.business.state} {this.props.business.zipcode}</div>
+                                <div>{business.address}</div>
+                                <div>{business.city}, {business.state} {business.zipcode}</div>
                                 {/* <div>{phoneNumber()}</div> */}
 
-                                <a href={this.props.business.website}>{this.props.business.website}</a>
+                                <a href={business.website}>{business.website}</a>
                             </div>
                         </div>
                     </div>
@@ -93,12 +74,12 @@ class BusinessShow extends React.Component {
                     </div>
                 </section>
                 <section className="content-right">
-                    <Information/>
+                    <Information />
                 </section>
             </div>
         </div>
-        );
-    }
-};
+    );
+    return content;
+}
 
 export default BusinessShow;

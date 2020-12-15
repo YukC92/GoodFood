@@ -5,7 +5,7 @@ import BusinessIndex from './business_index';
 import { fetchBusinesses } from '../../actions/business_actions';
 
 const mapStateToProps = state => {
-  debugger
+  // debugger
   let businesses = Object.values(state.entities.businesses)
   return ({
     currentUser: state.session.currentUser,
