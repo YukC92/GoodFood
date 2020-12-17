@@ -30,6 +30,10 @@
   margin-right: 50px;
 }
 
+.business-header-info h1 {
+  font-size: xx-large;
+}
+
 .under-header-right{
   display: flex;
   justify-content: flex-end;
@@ -37,12 +41,20 @@
   width: 200px;
 }
 
+.business-pic img {
+  width: 25%;
+  height: 225px;
+  object-fit: none;
+  
+}
+
 .business-photo {
-    display: inline-block;
-    width: 25%;
-    height: 25%;
-    object-fit: cover;
-    object-position: center;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 25%;
+  transition: all 0.2s ease-out;
 }
 
 .comment-box-container{
@@ -154,4 +166,12 @@
 
 .material-icons{
   color: white;
+}
+
+.delete-button {
+  color: #008CBA;
+}
+
+.dollar-sign {
+  font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;;
 }

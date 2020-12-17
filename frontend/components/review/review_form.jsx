@@ -54,12 +54,6 @@ const ReviewForm = props => {
         })
     }
 
-    const getDate = () => {
-        let today = new Date();
-        date = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`
-        return date;
-    }
-
     const ratingTextContent = index => {
         const options = ["Select your rating", "Eek! Methinks not.", "Meh. I've experienced better.", "A-OK", "Yay! I'm a fan.", "Woohoo! As good as it gets!"];
         const element = document.getElementById("rating-text");
@@ -73,10 +67,6 @@ const ReviewForm = props => {
         const lastClass = element.classList[element.classList.length - 1];
         element.classList.remove(lastClass);
         element.classList.add("stars-extra-large-" + index);
-    }
-
-    const showPageLink = () => {
-        return `/businesses/${businessId}`;
     }
 
     const onSubmit = (e) => {
@@ -94,7 +84,7 @@ const ReviewForm = props => {
 
     const update = field => {
         return e => {
-            if (field === "body") setBody(e.target.value);
+            if (field === "content") setContent(e.target.value);
             else setRating(e.target.value)
         }
     }

@@ -1,6 +1,7 @@
 .navbar-container{
+  float: right;
   justify-content: space-between;
-  padding: 10px 20px 0px 0px; 
+  padding: 30px 20px 0px 0px; 
   font-size: 14px;
   font-weight: 700;
   color: white;
@@ -19,17 +20,52 @@
 }
 
 .right-nav {
-  float: right;
   display: flex;
   color: inherit;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.right-nav :hover {
-  background-color: gray;
+.login {
+  background: transparent;
+  border: 1px solid #bbbac0;
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px;
 }
 
+.login :hover {
+  background-color: lightgrey;
+}
+
+.signup {
+  background: red;
+  border: 1px solid #bbbac0;
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.login-show {
+  background: white;
+  border: 1px solid #bbbac0;
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px;
+  color: black;;
+}
+
+.login :hover {
+  background-color: lightgrey;
+}
+
+.signup-show {
+  background: transparent;
+  border: 1px solid #bbbac0;
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px;
+}
 .write-reviews :hover{
   background-color: gray;
 }
@@ -37,9 +73,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
   min-width: 60px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   height: 100px;
   z-index: 1;
 }
@@ -59,15 +93,14 @@
 
 .myDropdown{
   width: 100%;
+  background: transparent;
 }
 
 .logout-button{
     color: black;
     font-size: 14px;
     margin-top: 12px;
-    border-top: 1px solid #e6e6e6;
     padding-top: 11px;
-    background-color: white;
     padding-bottom: 10px;
     display: flex;
     justify-content: center;

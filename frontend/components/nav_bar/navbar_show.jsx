@@ -14,27 +14,31 @@ const NavBarShow = props => {
         }
     }
 
-    const personalGreeting = (currentUser) ? (
-    <div>
+    const personalGreeting = currentUser ? (
+      <div>
         <div onClick={dropDown}>
-            <p>Hi, {currentUser.username}!</p>
+          <p>Hi, {currentUser.username}!</p>
         </div>
         <div id="myDropdown" className="dropdown-content">
-            <input
-                className="logout-button"
-                type="submit"
-                onClick={logout}
-                value="Log Out"
-            />
+          <button className="logout-button" onClick={logout}>
+            Log out
+          </button>
         </div>
-    </div>
+      </div>
     ) : (
-    <div>
-        <Link to={`/login?redirecto=${props.location.pathname}`}>Login</Link>
-        &nbsp;&nbsp;
-        <Link to="/signup">Sign up!</Link>
-    </div>
-    )
+      <div className="login-signup">
+        <Link
+          to={`/login?redirecto=${props.location.pathname}`}
+          className="login-show"
+        >
+          Login
+        </Link>
+        &nbsp;&nbsp;&nbsp;
+        <Link to="/signup" className="signup-show">
+          Sign up!
+        </Link>
+      </div>
+    );
 
     return(
     <div>

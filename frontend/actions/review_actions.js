@@ -31,5 +31,5 @@ export const updateReview = review => dispatch => {
 
 export const deleteReview = reviewId => dispatch => {
   return ReviewApiUtil.deleteReview(reviewId)
-  .then(reviewId => dispatch(removeReview(reviewId)));
+  .then(reviewId => dispatch((removeReview(reviewId))));
 };

@@ -25,9 +25,6 @@ const BusinessShow = props => {
         )
     }
 
-    const handleDelete = (id) => {
-        deleteReview(id).then(() => fetchBusiness(match.params.businessId));
-    }
 
     const allReviews = business.reviews.map(review => {
 
@@ -35,49 +32,54 @@ const BusinessShow = props => {
             id={review.id}
             review={review}
             business={business}
+            match={match}
             key={review.id}
             currentUser={currentUser}
-            deleteReview={handleDelete}
+            deleteReview={deleteReview}
+            fetchBusiness={fetchBusiness}
         />)
     })
 
-    debugger
+    // debugger
     const content = (
-        <div>
-            <div className="business-nav">
-                <NavBarShowContainer />
-            </div>
-            <div className="business-pic">
-                {contentPhotos()}
-            </div>
-            <div className="business-main-info">
-                <MainContentHeader business={business} match={match} currentUser={currentUser} />
-            </div>
-            <div className="main-content">
-                <section className="content-left">
-                    <div className="business-map-and-pic">
-                        <div className="business-map">
-                            <BusinessShowMap businesses={[business]} />
-                            <div className="business-basic-info">
-                                <div>{business.address}</div>
-                                <div>{business.city}, {business.state} {business.zipcode}</div>
-                                {/* <div>{phoneNumber()}</div> */}
-
-                                <a href={business.website}>{business.website}</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="business-review">
-                        <div>
-                            {allReviews}
-                        </div>
-                    </div>
-                </section>
-                <section className="content-right">
-                    <Information />
-                </section>
-            </div>
+      <div>
+        <div className="business-nav">
+          <NavBarShowContainer />
         </div>
+        <div className="business-pic">{contentPhotos()}</div>
+        <div className="business-main-info">
+          <MainContentHeader
+            business={business}
+            match={match}
+            currentUser={currentUser}
+          />
+        </div>
+        <div className="main-content">
+          <section className="content-left">
+            <div className="business-map-container">
+              <div className="business-map">
+                <BusinessShowMap businesses={[business]} zoom="false" />
+              </div>
+              <div className="business-basic-info">
+                <div>{business.address}</div>
+                <div>
+                  {business.city}, {business.state} {business.zipcode}
+                </div>
+                <br />
+                <a href={business.website}>{business.website}</a>
+              </div>
+            </div>
+            <br />
+            <br />
+            <div className="business-review">
+              <div>{allReviews}</div>
+            </div>
+          </section>
+          <section className="content-right">
+            <Information />
+          </section>
+        </div>
+      </div>
     );
     return content;
 }

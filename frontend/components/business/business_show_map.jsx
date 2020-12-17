@@ -46,7 +46,7 @@ class BusinessShowMap extends React.Component {
 
     render() {
         return (
-            <div id="index-map-container" ref={map => (this.mapNode = map)}>
+            <div id="index-map-container" ref={map => (this.mapNode = map)} width="300" height="300">
 
             </div>
         )

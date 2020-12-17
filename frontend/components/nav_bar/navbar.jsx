@@ -9,11 +9,11 @@ const NavBar = ({ currentUser, logout }) => {
       <button className="header-button" onClick={logout}>Log Out</button>
     </div>
   ) : (
-    <nav className="login-signup">
-      <Link to="/login">Login</Link>
+    <div className="login-signup">
+      <Link to="/login" className="login">Login</Link>
       &nbsp;&nbsp;&nbsp;
-      <Link to="/signup">Sign up!</Link>
-    </nav>
+      <Link to="/signup" className="signup">Sign up!</Link>
+    </div>
   )
 
   return (

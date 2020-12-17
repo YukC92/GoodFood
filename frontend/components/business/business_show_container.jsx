@@ -6,11 +6,11 @@ import { deleteReview } from '../../actions/review_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  // debugger
     const businessId = ownProps.match.params.businessId;
     const currentUser = state.session.currentUser
     return({
-        currentUser,
+        currentUser: currentUser,
         business: state.entities.businesses[businessId],
     });
 };

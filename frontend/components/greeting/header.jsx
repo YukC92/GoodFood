@@ -8,11 +8,11 @@ const Header = () => {
   return (
     <div className="homepage">
       <div className="header">
-        <NavBarContainer/>
-        <Logo/>
+        <NavBarContainer />
+        <Logo />
       </div>
     </div>
-  )
+  );
 };
 
 

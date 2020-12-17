@@ -6,7 +6,10 @@ class MainContentHeader extends React.Component {
       super(props);
     }
 
+  
     hasReview() {
+      // debugger
+// 
         if (!this.props.currentUser) {
           return (
             <Link to={`/login`}>
@@ -17,7 +20,7 @@ class MainContentHeader extends React.Component {
 
 
         for (let i = 0; i < this.props.business.reviews.length; i++) {
-          let userId = this.props.business.reviews[i].userId;
+          let userId = this.props.business.reviews[i].user_id;
           if (userId === this.props.currentUser) {
             return (
               <Link
@@ -55,12 +58,12 @@ class MainContentHeader extends React.Component {
             <div className="business-header-info-container">
                 <div className="business-header-info">
                     <div>
-                        <div>{this.props.business.business_name}</div>
+                        <h1>{this.props.business.business_name}</h1>
                         <img
                           className={`star-lrg-${this.finalRating()}` + ` star-lrg`}
                           src="https://i.imgur.com/UkZkm0D.png"
                         />
-                        <div>$$</div>
+                        <div className="dollar-sign">$$</div>
                     </div>
 
                     <div className="under-header-right">

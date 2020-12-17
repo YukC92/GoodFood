@@ -19,7 +19,6 @@ const App = () => (
         <ProtectedRoute exact path="/businesses/:businessId/reviews/:reviewId" component={EditReviewContainer} />
         <ProtectedRoute exact path="/businesses/:businessId/reviews" component={CreateReviewContainer} />
         <Route path="/businesses" component={BusinessIndexContainer}/>
-        {/* <Route path="/businesses" component={CreateReviewContainer}/> */}
         <Route path ="/" component={HeaderContainer}/>
 
     </Switch>

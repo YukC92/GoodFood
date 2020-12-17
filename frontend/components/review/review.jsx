@@ -1,28 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import { Route, withRouter } from "react-router-dom";
 
-
 const Review = props => {
-  const {deleteReview, id, review, business, key, currentUser} = props
-
-  const checkUser = () => {
+  const {deleteReview, id, review, fetchBusiness, key, currentUser, match} = props
+  // debugger
+  // console.log(review)
+  const deleteComment = () => {
       if (!currentUser) return;
       if (currentUser === review.user_id) {
         return (
-          <button onClick={deleteReview}>deleteReview</button>
+            <input className="delete-button" type="submit" onClick={handleDelete} value="Delete"/>
+
         );
       }
       return ""
     }
 
-  // const deleteReview = () => {
-  //     debugger
-  //     delete(props.review.id)
-  //     .then(() => {
-  //       debugger
-  //       props.history.push(`/businesses/${props.business.id}`)
-  //     });
-  //   }
+    const handleDelete = () => {
+        deleteReview(id).then(() => fetchBusiness(match.params.businessId));
+    }
 
     const getDate = () => {
       let date = props.review.updatedAt;
@@ -39,7 +35,7 @@ const Review = props => {
         <>
           <div className="comment-box-container">
             <div className="comment-box-profile">
-              <img className="review-user-pic" src={picture} />
+          <img className="review-user-pic" src="https://good-food-to-eat-seeds.s3-us-west-1.amazonaws.com/user+icon.png" />
               <div>{`${review.username}`}</div>
             </div>
             <div className="comment-box-body">
@@ -52,7 +48,8 @@ const Review = props => {
               </div>
               <div className="review-body">
                 <div className="review-text-body">{review.content}</div>
-                {checkUser()}
+                <br/>
+                {deleteComment()}
               </div>
             </div>
           </div>

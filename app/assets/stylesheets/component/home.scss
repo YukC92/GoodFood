@@ -1,12 +1,16 @@
 .header {
-    background-image: url("https://good-food-to-eat-seeds.s3-us-west-1.amazonaws.com/home+background.jpeg");
+    background: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("https://good-food-to-eat-seeds.s3-us-west-1.amazonaws.com/gHNcNahbSwCaGQGT3QYdPQ.jpg");
     background-size: cover;
     background-position: center;
-    height: 550px
+    height: 550px;
 }
 
 #logo{
-    display: flex;
+    display: block;
     justify-content: center;
     align-self: center;
     font-family: "Helvetica Neue", Helvetica, Arial, "sans serif";
@@ -16,13 +20,11 @@
     color:  black;
     font-size: 3.5em;
     justify-content: center;
-    text-shadow: 1px 1px 2px white;;
+    text-shadow: 2px 2px 2px white;;
     margin: 0 auto;
     padding-top: 80px;
-    padding-bottom: 100px;
     padding-left: auto;
     padding-right: auto;
-    
 }
 
 .explore-business {
@@ -35,11 +37,13 @@
     font-size: 1.5em;
     padding: 24px;
     justify-content: center;
-    text-shadow: 1px 1px 2px white;;
     margin: 0 auto;
-    padding-top: 80px;
-    padding-bottom: 100px;
     
+}
+
+.explore-business a {
+    background: red;
+    border: 1px solid #bbbac0;
 }
 
 .footer {
