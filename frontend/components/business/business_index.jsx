@@ -3,6 +3,7 @@ import React from "react";
 import BusinessIndexItem from './business_index_item';
 import NavbarShow from "../nav_bar/navbar_show_container";
 import BusinessIndexMap from "./business_index_map";
+import { Link } from 'react-router-dom'
 
 class BusinessIndex extends React.Component{
   constructor(props) {
@@ -31,7 +32,14 @@ class BusinessIndex extends React.Component{
     // debugger
     let { businesses } = this.props;
     let filteredBusinesses = (Object.values(businesses)).filter((business) => {
-      return business.category.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+      return (
+        business.category.name
+          .toLowerCase()
+          .indexOf(this.state.search.toLowerCase()) !== -1 ||
+        business.business_name
+          .toLowerCase()
+          .indexOf(this.state.search.toLowerCase()) !== -1
+      );
     });
 
     let allBusinesses = filteredBusinesses.map(business => {
@@ -65,7 +73,7 @@ class BusinessIndex extends React.Component{
           </div>
           <div className="business-index-sidebar-right">
             <div className="fake-map">
-              <BusinessIndexMap businesses={businesses} />
+              <BusinessIndexMap businesses={businesses}/>
             </div>
           </div>
           </div>

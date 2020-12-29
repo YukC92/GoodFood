@@ -13,14 +13,8 @@ class BusinessIndexMap extends React.Component {
                     lat: this.props.businesses[0].latitude,
                     lng: this.props.businesses[0].longtitude
                 },
-                zoom: 16,
-                fullscreenControl: false,
-                streetViewControl: false,
-                zoomControl: this.props.zoom,
-                zoomControlOptions: {
-                    position: google.maps.ControlPosition.TOP_LEFT
-                },
-                gestureHandling: "none"
+                zoom: 13,
+
             };
         } else {
             return ({

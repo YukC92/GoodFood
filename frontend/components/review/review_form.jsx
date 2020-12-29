@@ -178,6 +178,7 @@ const ReviewForm = props => {
                         </span>
                     </div>
                     <textarea
+                        className="review-content"
                         cols="80"
                         rows="20"
                         placeholder={placeholder}

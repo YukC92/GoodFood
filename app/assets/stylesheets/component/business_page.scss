@@ -285,10 +285,13 @@ font-weight: bold;
 }
 
 .fake-map {
-    height: 350px;
-    width: 350px;
-    position: sticky;
-    top: 0;
+  border-radius: 5px;
+  margin-top: 25px;
+  width: 300px;
+  height: 600px;
+  min-width: 300px;
+  position: sticky;
+  top: 15px;
 }
 
 #index-map-container {

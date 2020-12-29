@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import SearchBarContainer from "../search_bar/search_bar_container"
 
 const NavBarShow = props => {
-    const {currentUser, logout, type} = props
+    const {currentUser, logout} = props
 
     const dropDown = () => {
         var x = document.getElementById("myDropdown");
@@ -17,7 +17,7 @@ const NavBarShow = props => {
     const personalGreeting = currentUser ? (
       <div>
         <div onClick={dropDown}>
-          <p>Hi, {currentUser.username}!</p>
+          <p>Hi, {currentUser.username}! &nbsp;&nbsp;&#8595;</p>
         </div>
         <div id="myDropdown" className="dropdown-content">
           <button className="logout-button" onClick={logout}>
