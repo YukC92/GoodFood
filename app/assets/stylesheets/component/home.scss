@@ -80,3 +80,72 @@
     text-align: center;
     font-weight: bold;
 }
+
+.home-restaurant{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+.home-restaurants{
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-restaurant-photo{
+    width: 298px;
+    overflow: hidden;
+    border-bottom: 1px solid #e6e6e6;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.top-restaurants-in-sf{
+  display: flex;
+  font-size: 20px;
+  color: rgb(211, 35, 35);
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.home-restaurant-photo img{
+  display: flex;
+  justify-content: space-between;
+  object-fit: cover;
+  height: 250px;
+  width: 298px;
+}
+
+.home-business{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 12px;
+}
+
+.title{
+  color: #0073bb;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  font-family:"Open Sans", sans-serif;
+  padding-top: 2px;
+}
+
+.category{
+  font-size: 16px;
+  color: #333;
+  margin-top: 6px;
+}
+
+.home-restaurant-container{
+  padding-top: 32px;
+  padding-bottom: 90px;
+}
+
+.home-body{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
